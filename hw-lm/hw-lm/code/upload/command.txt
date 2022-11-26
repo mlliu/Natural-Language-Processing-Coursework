@@ -1,0 +1,31 @@
+./train_lm.py vocab-genspam.txt add_lambda ./
+
+
+./train_lm.py vocab-genspam.txt log_linear --lexicon ../lexicons/words-10.txt --l2_regularization 1 ../data/gen_spam/train/gen --output gen-1.model
+./train_lm.py vocab-genspam.txt log_linear --lexicon ../lexicons/words-10.txt --l2_regularization 1 ../data/gen_spam/train/spam --output spam-1.model
+
+./fileprob.py gen-1.model ../data/gen_spam/dev/gen/*
+./fileprob.py spam-1.model ../data/gen_spam/dev/spam/*
+
+./textcat.py gen-1.model spam-1.model 0.7 ../data/gen_spam/dev/gen/*
+./textcat.py gen-1.model spam-1.model 0.7 ../data/gen_spam/dev/spam/*
+
+en_sp
+
+./train_lm.py vocab-en_sp.txt log_linear --lexicon ../lexicons/chars-10.txt --l2_regularization 0.5 ../data/english_spanish/train/en.10K --output log_linear_en.model
+
+./fileprob.py log_linear_en.model ../data/english_spanish/dev/english/*/*
+./fileprob.py log_linear_sp.model ../data/english_spanish/dev/spanish/*/*
+
+./textcat.py log_linear_en.model log_linear_sp.model 0.7 ../data/english_spanish/dev/english/*/*
+./textcat.py log_linear_en.model log_linear_sp.model 0.7 ../data/english_spanish/dev/spanish/*/*
+
+./train_lm.py vocab-genspam.txt log_linear_improved --lexicon ../lexicons/words-10.txt --l2_regularization 0.1 ../data/gen_spam/train/gen --output improved-gen.model
+./train_lm.py vocab-genspam.txt log_linear_improved --lexicon ../lexicons/words-10.txt --l2_regularization 0.1 ../data/gen_spam/train/spam --output improved-spam.model
+
+
+./train_lm.py vocab-genspam.txt log_linear_improved --lexicon ../lexicons/words-10.txt --l2_regularization 0.1 ../data/gen_spam/train/gen --dev_file ../data/gen_spam/dev/gen/* --output gen_improved.model
+./train_lm.py vocab-genspam.txt log_linear_improved --lexicon ../lexicons/words-10.txt --l2_regularization 0.1 ../data/gen_spam/train/spam --dev_file ../data/gen_spam/dev/spam/* --output spam_improved.model
+
+
+./train_lm.py vocab-genspam.txt log_linear_improved --lexicon ../lexicons/words-10.txt --l2_regularization 0.1 ../data/gen_spam/train/spam --dev_file ../data/gen_spam/dev/spam/* --output spam_improved.model
