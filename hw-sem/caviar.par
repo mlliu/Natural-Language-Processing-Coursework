@@ -1,0 +1,550 @@
+         Papa: Papa 
+         Attributes: sem=Papa head=Papa
+      NP: Papa 
+      Attributes: sem=Papa head=Papa num=sing
+                  sleep: sleep 
+                  Attributes: head=sleep sem=sleep
+               V: sleep 
+               Attributes: tense=stem arg=none sem=%subj sleep(subj) head=sleep
+               -s: -s 
+               Attributes: head=-s sem=-s
+            V: sleep -s 
+            Attributes: sem=%subj sleep(subj) head=sleep tense=pres num=sing arg=none
+            Or:       arg=none tense=pres num=mass head=sleep sem=%subj sleep(subj)
+         VP: sleep -s 
+         Attributes: sem=%subj sleep(subj) head=sleep num=sing tense=pres
+         Or:       tense=pres num=mass sem=%subj sleep(subj) head=sleep
+               with: with 
+               Attributes: sem=with head=with
+            P: with 
+            Attributes: head=with sem=with
+                  a: a 
+                  Attributes: sem=a head=a
+               Det: a 
+               Attributes: num=sing sem=some head=a
+                  caviar: caviar 
+                  Attributes: head=caviar sem=caviar
+               N: caviar 
+               Attributes: num=mass sem=caviar head=caviar
+            NP: a caviar 
+            No consistent way to assign attributes!  (Maybe another parse?)
+         PP: with a caviar 
+         No consistent way to assign attributes!  (Maybe another parse?)
+      VP: sleep -s with a caviar 
+      No consistent way to assign attributes!  (Maybe another parse?)
+   S: Papa sleep -s with a caviar 
+   No consistent way to assign attributes!  (Maybe another parse?)
+   .: . 
+   Attributes: sem=. head=.
+ROOT: Papa sleep -s with a caviar . 
+No consistent way to assign attributes!  (Maybe another parse?)
+---
+         Papa: Papa 
+         Attributes: head=Papa sem=Papa
+      NP: Papa 
+      Attributes: num=sing head=Papa sem=Papa
+                  sleep: sleep 
+                  Attributes: sem=sleep head=sleep
+               V: sleep 
+               Attributes: head=sleep sem=%subj sleep(subj) arg=none tense=stem
+               -s: -s 
+               Attributes: head=-s sem=-s
+            V: sleep -s 
+            Attributes: arg=none num=sing tense=pres head=sleep sem=%subj sleep(subj)
+            Or:       tense=pres num=mass arg=none sem=%subj sleep(subj) head=sleep
+                  every: every 
+                  Attributes: sem=every head=every
+               Det: every 
+               Attributes: sem=all head=every num=sing
+                  caviar: caviar 
+                  Attributes: head=caviar sem=caviar
+               N: caviar 
+               Attributes: num=mass head=caviar sem=caviar
+            NP: every caviar 
+            No consistent way to assign attributes!  (Maybe another parse?)
+         VP: sleep -s every caviar 
+         No consistent way to assign attributes!  (Maybe another parse?)
+               with: with 
+               Attributes: sem=with head=with
+            P: with 
+            Attributes: sem=with head=with
+                  a: a 
+                  Attributes: head=a sem=a
+               Det: a 
+               Attributes: num=sing sem=some head=a
+                  spoon: spoon 
+                  Attributes: head=spoon sem=spoon
+               N: spoon 
+               Attributes: num=sing sem=spoon head=spoon
+            NP: a spoon 
+            Attributes: head=spoon sem=some(spoon) num=sing
+         PP: with a spoon 
+         Attributes: head=with sem=%x with(some(spoon),x)
+      VP: sleep -s every caviar with a spoon 
+      No consistent way to assign attributes!  (Maybe another parse?)
+   S: Papa sleep -s every caviar with a spoon 
+   No consistent way to assign attributes!  (Maybe another parse?)
+   .: . 
+   Attributes: head=. sem=.
+ROOT: Papa sleep -s every caviar with a spoon . 
+No consistent way to assign attributes!  (Maybe another parse?)
+---
+         Papa: Papa 
+         Attributes: sem=Papa head=Papa
+      NP: Papa 
+      Attributes: num=sing sem=Papa head=Papa
+                  eat: eat 
+                  Attributes: sem=eat head=eat
+               V: eat 
+               Attributes: sem=%obj %subj eat(obj,subj) head=eat tense=stem arg=np
+               Or:       head=eat sem=%subj eat(SOMETHING,subj) arg=none tense=stem
+               -ed: -ed 
+               Attributes: head=-ed sem=-ed
+            V: eat -ed 
+            Attributes: arg=np tense=past head=eat sem=%obj %subj eat(obj,subj)
+            Or:       arg=np tense=pastp head=eat sem=%obj %subj eat(obj,subj)
+            Or:       tense=past arg=none sem=%subj eat(SOMETHING,subj) head=eat
+            Or:       head=eat sem=%subj eat(SOMETHING,subj) arg=none tense=pastp
+                  every: every 
+                  Attributes: head=every sem=every
+               Det: every 
+               Attributes: head=every sem=all num=sing
+                  caviar: caviar 
+                  Attributes: head=caviar sem=caviar
+               N: caviar 
+               Attributes: head=caviar sem=caviar num=mass
+            NP: every caviar 
+            No consistent way to assign attributes!  (Maybe another parse?)
+         VP: eat -ed every caviar 
+         No consistent way to assign attributes!  (Maybe another parse?)
+               with: with 
+               Attributes: sem=with head=with
+            P: with 
+            Attributes: sem=with head=with
+                  a: a 
+                  Attributes: sem=a head=a
+               Det: a 
+               Attributes: num=sing head=a sem=some
+                  spoon: spoon 
+                  Attributes: sem=spoon head=spoon
+               N: spoon 
+               Attributes: num=sing head=spoon sem=spoon
+            NP: a spoon 
+            Attributes: num=sing head=spoon sem=some(spoon)
+         PP: with a spoon 
+         Attributes: sem=%x with(some(spoon),x) head=with
+      VP: eat -ed every caviar with a spoon 
+      No consistent way to assign attributes!  (Maybe another parse?)
+   S: Papa eat -ed every caviar with a spoon 
+   No consistent way to assign attributes!  (Maybe another parse?)
+   .: . 
+   Attributes: head=. sem=.
+ROOT: Papa eat -ed every caviar with a spoon . 
+No consistent way to assign attributes!  (Maybe another parse?)
+---
+         Papa: Papa 
+         Attributes: head=Papa sem=Papa
+      NP: Papa 
+      Attributes: num=sing head=Papa sem=Papa
+                  eat: eat 
+                  Attributes: head=eat sem=eat
+               V: eat 
+               Attributes: head=eat sem=%obj %subj eat(obj,subj) arg=np tense=stem
+               Or:       sem=%subj eat(SOMETHING,subj) head=eat tense=stem arg=none
+               -ed: -ed 
+               Attributes: head=-ed sem=-ed
+            V: eat -ed 
+            Attributes: head=eat sem=%obj %subj eat(obj,subj) arg=np tense=past
+            Or:       head=eat sem=%obj %subj eat(obj,subj) arg=np tense=pastp
+            Or:       sem=%subj eat(SOMETHING,subj) head=eat tense=past arg=none
+            Or:       arg=none tense=pastp head=eat sem=%subj eat(SOMETHING,subj)
+                  the: the 
+                  Attributes: sem=the head=the
+               Det: the 
+               Attributes: num=sing head=the sem=the
+               Or:       head=the sem=the_plural num=pl
+               Or:       head=the sem=the_mass num=mass
+                  caviar: caviar 
+                  Attributes: sem=caviar head=caviar
+               N: caviar 
+               Attributes: num=mass sem=caviar head=caviar
+            NP: the caviar 
+            Attributes: head=caviar sem=the_mass(caviar) num=mass
+         VP: eat -ed the caviar 
+         Attributes: tense=past head=eat sem=%subj eat(the_mass(caviar),subj)
+         Or:       head=eat sem=%subj eat(the_mass(caviar),subj) tense=pastp
+               with: with 
+               Attributes: head=with sem=with
+            P: with 
+            Attributes: head=with sem=with
+                  a: a 
+                  Attributes: head=a sem=a
+               Det: a 
+               Attributes: num=sing sem=some head=a
+                  spoon: spoon 
+                  Attributes: head=spoon sem=spoon
+               N: spoon 
+               Attributes: sem=spoon head=spoon num=sing
+            NP: a spoon 
+            Attributes: sem=some(spoon) head=spoon num=sing
+         PP: with a spoon 
+         Attributes: sem=%x with(some(spoon),x) head=with
+      VP: eat -ed the caviar with a spoon 
+      Attributes: head=eat sem=%subj with(some(spoon),eat(the_mass(caviar),subj)) tense=past
+      Or:       sem=%subj with(some(spoon),eat(the_mass(caviar),subj)) head=eat tense=pastp
+   S: Papa eat -ed the caviar with a spoon 
+   Attributes: head=eat sem=Past(with(some(spoon),eat(the_mass(caviar),Papa)))
+   .: . 
+   Attributes: sem=. head=.
+ROOT: Papa eat -ed the caviar with a spoon . 
+Attributes: sem=Assert(Speaker, Past(with(some(spoon),eat(the_mass(caviar),Papa)))) head=eat
+---
+         Papa: Papa 
+         Attributes: head=Papa sem=Papa
+      NP: Papa 
+      Attributes: head=Papa sem=Papa num=sing
+                  eat: eat 
+                  Attributes: head=eat sem=eat
+               V: eat 
+               Attributes: sem=%obj %subj eat(obj,subj) head=eat tense=stem arg=np
+               Or:       head=eat sem=%subj eat(SOMETHING,subj) arg=none tense=stem
+               -ed: -ed 
+               Attributes: head=-ed sem=-ed
+            V: eat -ed 
+            Attributes: arg=np tense=past head=eat sem=%obj %subj eat(obj,subj)
+            Or:       tense=pastp arg=np sem=%obj %subj eat(obj,subj) head=eat
+            Or:       sem=%subj eat(SOMETHING,subj) head=eat tense=past arg=none
+            Or:       sem=%subj eat(SOMETHING,subj) head=eat tense=pastp arg=none
+                  his: his 
+                  Attributes: sem=his head=his
+               Det: his 
+               Attributes: sem=%n the(%x n(x)^possess(x,him)) head=his num=sing
+               Or:       head=his sem=%n the_plural(%x n(x)^possess(x,him)) num=pl
+               Or:       num=mass head=his sem=%n the_mass(%x n(x)^possess(x,him))
+                  caviar: caviar 
+                  Attributes: sem=caviar head=caviar
+               N: caviar 
+               Attributes: head=caviar sem=caviar num=mass
+            NP: his caviar 
+            Attributes: head=caviar sem=the_mass(%x caviar(x)^possess(x,him)) num=mass
+         VP: eat -ed his caviar 
+         Attributes: tense=past sem=%subj eat(the_mass(%x caviar(x)^possess(x,him)),subj) head=eat
+         Or:       sem=%subj eat(the_mass(%x caviar(x)^possess(x,him)),subj) head=eat tense=pastp
+               with: with 
+               Attributes: head=with sem=with
+            P: with 
+            Attributes: sem=with head=with
+                  a: a 
+                  Attributes: sem=a head=a
+               Det: a 
+               Attributes: num=sing sem=some head=a
+                  spoon: spoon 
+                  Attributes: sem=spoon head=spoon
+               N: spoon 
+               Attributes: sem=spoon head=spoon num=sing
+            NP: a spoon 
+            Attributes: num=sing sem=some(spoon) head=spoon
+         PP: with a spoon 
+         Attributes: sem=%x with(some(spoon),x) head=with
+      VP: eat -ed his caviar with a spoon 
+      Attributes: head=eat sem=%subj with(some(spoon),eat(the_mass(%x caviar(x)^possess(x,him)),subj)) tense=past
+      Or:       tense=pastp sem=%subj with(some(spoon),eat(the_mass(%x caviar(x)^possess(x,him)),subj)) head=eat
+   S: Papa eat -ed his caviar with a spoon 
+   Attributes: head=eat sem=Past(with(some(spoon),eat(the_mass(%x caviar(x)^possess(x,him)),Papa)))
+   .: . 
+   Attributes: sem=. head=.
+ROOT: Papa eat -ed his caviar with a spoon . 
+Attributes: sem=Assert(Speaker, Past(with(some(spoon),eat(the_mass(%x caviar(x)^possess(x,him)),Papa)))) head=eat
+---
+         have: have 
+         Attributes: head=have sem=have
+      V: have 
+      Attributes: tense=stem arg=np sem=possess head=have
+      Or:       arg=np num=pl tense=pres head=have sem=possess
+            a: a 
+            Attributes: sem=a head=a
+         Det: a 
+         Attributes: head=a sem=some num=sing
+            caviar: caviar 
+            Attributes: head=caviar sem=caviar
+         N: caviar 
+         Attributes: num=mass sem=caviar head=caviar
+      NP: a caviar 
+      No consistent way to assign attributes!  (Maybe another parse?)
+   VP: have a caviar 
+   No consistent way to assign attributes!  (Maybe another parse?)
+   !: ! 
+   Attributes: sem=! head=!
+ROOT: have a caviar ! 
+No consistent way to assign attributes!  (Maybe another parse?)
+---
+            all: all 
+            Attributes: sem=all head=all
+         Det: all 
+         Attributes: head=all sem=all num=pl
+         Or:       sem=all head=all num=mass
+               caviar: caviar 
+               Attributes: head=caviar sem=caviar
+            N: caviar 
+            Attributes: sem=caviar head=caviar num=mass
+                  on: on 
+                  Attributes: head=on sem=on
+               P: on 
+               Attributes: sem=on head=on
+                     the: the 
+                     Attributes: head=the sem=the
+                  Det: the 
+                  Attributes: sem=the head=the num=sing
+                  Or:       num=pl sem=the_plural head=the
+                  Or:       head=the sem=the_mass num=mass
+                     spoon: spoon 
+                     Attributes: head=spoon sem=spoon
+                  N: spoon 
+                  Attributes: head=spoon sem=spoon num=sing
+               NP: the spoon 
+               Attributes: sem=the(spoon) head=spoon num=sing
+            PP: on the spoon 
+            Attributes: head=on sem=%x on(the(spoon),x)
+         N: caviar on the spoon 
+         Attributes: num=mass head=caviar sem=%x caviar(x) ^ on(the(spoon),x)
+      NP: all caviar on the spoon 
+      Attributes: num=mass sem=all(%x caviar(x) ^ on(the(spoon),x)) head=caviar
+               entice: entice 
+               Attributes: sem=entice head=entice
+            V: entice 
+            Attributes: head=entice sem=%obj %subj entice(obj,subj) arg=np tense=stem
+            Or:       arg=none tense=stem head=entice sem=%subj entice(SOMETHING,subj)
+            -s: -s 
+            Attributes: head=-s sem=-s
+         V: entice -s 
+         Attributes: tense=pres num=sing arg=np sem=%obj %subj entice(obj,subj) head=entice
+         Or:       sem=%obj %subj entice(obj,subj) head=entice tense=pres num=mass arg=np
+         Or:       tense=pres num=sing arg=none sem=%subj entice(SOMETHING,subj) head=entice
+         Or:       sem=%subj entice(SOMETHING,subj) head=entice tense=pres num=mass arg=none
+      VP: entice -s 
+      Attributes: sem=%subj entice(SOMETHING,subj) head=entice tense=pres num=sing
+      Or:       sem=%subj entice(SOMETHING,subj) head=entice tense=pres num=mass
+   S: all caviar on the spoon entice -s 
+   Attributes: head=entice sem=Pres(entice(SOMETHING,all(%x caviar(x) ^ on(the(spoon),x))))
+   .: . 
+   Attributes: sem=. head=.
+ROOT: all caviar on the spoon entice -s . 
+Attributes: head=entice sem=Assert(Speaker, Pres(entice(SOMETHING,all(%x caviar(x) ^ on(the(spoon),x)))))
+---
+            all: all 
+            Attributes: head=all sem=all
+         Det: all 
+         Attributes: num=pl sem=all head=all
+         Or:       num=mass sem=all head=all
+               caviar: caviar 
+               Attributes: head=caviar sem=caviar
+            N: caviar 
+            Attributes: sem=caviar head=caviar num=mass
+                  on: on 
+                  Attributes: sem=on head=on
+               P: on 
+               Attributes: sem=on head=on
+                     the: the 
+                     Attributes: head=the sem=the
+                  Det: the 
+                  Attributes: num=sing head=the sem=the
+                  Or:       num=pl sem=the_plural head=the
+                  Or:       num=mass head=the sem=the_mass
+                     spoon: spoon 
+                     Attributes: head=spoon sem=spoon
+                  N: spoon 
+                  Attributes: num=sing sem=spoon head=spoon
+               NP: the spoon 
+               Attributes: num=sing head=spoon sem=the(spoon)
+            PP: on the spoon 
+            Attributes: sem=%x on(the(spoon),x) head=on
+         N: caviar on the spoon 
+         Attributes: head=caviar sem=%x caviar(x) ^ on(the(spoon),x) num=mass
+      NP: all caviar on the spoon 
+      Attributes: num=mass sem=all(%x caviar(x) ^ on(the(spoon),x)) head=caviar
+               entice: entice 
+               Attributes: sem=entice head=entice
+            V: entice 
+            Attributes: head=entice sem=%obj %subj entice(obj,subj) arg=np tense=stem
+            Or:       tense=stem arg=none sem=%subj entice(SOMETHING,subj) head=entice
+            -0: -0 
+            Attributes: sem=-0 head=-0
+         V: entice -0 
+         Attributes: sem=%obj %subj entice(obj,subj) head=entice num=pl tense=pres arg=np
+         Or:       sem=%subj entice(SOMETHING,subj) head=entice tense=pres num=pl arg=none
+      VP: entice -0 
+      Attributes: tense=pres num=pl head=entice sem=%subj entice(SOMETHING,subj)
+   S: all caviar on the spoon entice -0 
+   No consistent way to assign attributes!  (Maybe another parse?)
+   .: . 
+   Attributes: sem=. head=.
+ROOT: all caviar on the spoon entice -0 . 
+No consistent way to assign attributes!  (Maybe another parse?)
+---
+            all: all 
+            Attributes: head=all sem=all
+         Det: all 
+         Attributes: sem=all head=all num=pl
+         Or:       sem=all head=all num=mass
+            caviar: caviar 
+            Attributes: sem=caviar head=caviar
+         N: caviar 
+         Attributes: num=mass head=caviar sem=caviar
+      NP: all caviar 
+      Attributes: num=mass sem=all(caviar) head=caviar
+            is: is 
+            Attributes: head=is sem=is
+         V: is 
+         Attributes: arg=pred tense=pres num=sing head=be sem=%pred %subj pred(subj)
+         Or:       num=mass tense=pres arg=pred sem=%pred %subj pred(subj) head=be
+            delicious: delicious 
+            Attributes: head=delicious sem=delicious
+         Adj: delicious 
+         Attributes: sem=delicious head=delicious
+      VP: is delicious 
+      Attributes: head=be sem=%subj delicious(subj) num=sing tense=pres
+      Or:       head=be sem=%subj delicious(subj) tense=pres num=mass
+   S: all caviar is delicious 
+   Attributes: head=be sem=Pres(delicious(all(caviar)))
+   .: . 
+   Attributes: head=. sem=.
+ROOT: all caviar is delicious . 
+Attributes: sem=Assert(Speaker, Pres(delicious(all(caviar)))) head=be
+---
+            all: all 
+            Attributes: sem=all head=all
+         Det: all 
+         Attributes: num=pl sem=all head=all
+         Or:       sem=all head=all num=mass
+            caviar: caviar 
+            Attributes: sem=caviar head=caviar
+         N: caviar 
+         Attributes: num=mass head=caviar sem=caviar
+      NP: all caviar 
+      Attributes: num=mass head=caviar sem=all(caviar)
+            are: are 
+            Attributes: sem=are head=are
+         V: are 
+         Attributes: sem=%pred %subj pred(subj) head=be num=pl tense=pres arg=pred
+            delicious: delicious 
+            Attributes: head=delicious sem=delicious
+         Adj: delicious 
+         Attributes: sem=delicious head=delicious
+      VP: are delicious 
+      Attributes: sem=%subj delicious(subj) head=be num=pl tense=pres
+   S: all caviar are delicious 
+   No consistent way to assign attributes!  (Maybe another parse?)
+   .: . 
+   Attributes: head=. sem=.
+ROOT: all caviar are delicious . 
+No consistent way to assign attributes!  (Maybe another parse?)
+---
+            the: the 
+            Attributes: sem=the head=the
+         Det: the 
+         Attributes: num=sing head=the sem=the
+         Or:       num=pl sem=the_plural head=the
+         Or:       sem=the_mass head=the num=mass
+               caviar: caviar 
+               Attributes: head=caviar sem=caviar
+            N: caviar 
+            Attributes: num=mass head=caviar sem=caviar
+                  on: on 
+                  Attributes: head=on sem=on
+               P: on 
+               Attributes: head=on sem=on
+                     the: the 
+                     Attributes: sem=the head=the
+                  Det: the 
+                  Attributes: num=sing head=the sem=the
+                  Or:       sem=the_plural head=the num=pl
+                  Or:       head=the sem=the_mass num=mass
+                     spoon: spoon 
+                     Attributes: head=spoon sem=spoon
+                  N: spoon 
+                  Attributes: num=sing sem=spoon head=spoon
+               NP: the spoon 
+               Attributes: num=sing sem=the(spoon) head=spoon
+            PP: on the spoon 
+            Attributes: head=on sem=%x on(the(spoon),x)
+         N: caviar on the spoon 
+         Attributes: head=caviar sem=%x caviar(x) ^ on(the(spoon),x) num=mass
+      NP: the caviar on the spoon 
+      Attributes: num=mass head=caviar sem=the_mass(%x caviar(x) ^ on(the(spoon),x))
+               entice: entice 
+               Attributes: head=entice sem=entice
+            V: entice 
+            Attributes: sem=%obj %subj entice(obj,subj) head=entice tense=stem arg=np
+            Or:       sem=%subj entice(SOMETHING,subj) head=entice tense=stem arg=none
+            -s: -s 
+            Attributes: head=-s sem=-s
+         V: entice -s 
+         Attributes: arg=np tense=pres num=sing head=entice sem=%obj %subj entice(obj,subj)
+         Or:       sem=%obj %subj entice(obj,subj) head=entice tense=pres num=mass arg=np
+         Or:       sem=%subj entice(SOMETHING,subj) head=entice tense=pres num=sing arg=none
+         Or:       num=mass tense=pres arg=none sem=%subj entice(SOMETHING,subj) head=entice
+      VP: entice -s 
+      Attributes: tense=pres num=sing sem=%subj entice(SOMETHING,subj) head=entice
+      Or:       num=mass tense=pres sem=%subj entice(SOMETHING,subj) head=entice
+   S: the caviar on the spoon entice -s 
+   Attributes: head=entice sem=Pres(entice(SOMETHING,the_mass(%x caviar(x) ^ on(the(spoon),x))))
+   .: . 
+   Attributes: sem=. head=.
+ROOT: the caviar on the spoon entice -s . 
+Attributes: head=entice sem=Assert(Speaker, Pres(entice(SOMETHING,the_mass(%x caviar(x) ^ on(the(spoon),x)))))
+---
+            the: the 
+            Attributes: sem=the head=the
+         Det: the 
+         Attributes: sem=the head=the num=sing
+         Or:       head=the sem=the_plural num=pl
+         Or:       sem=the_mass head=the num=mass
+                  caviar: caviar 
+                  Attributes: sem=caviar head=caviar
+               N: caviar 
+               Attributes: head=caviar sem=caviar num=mass
+               -s: -s 
+               Attributes: sem=-s head=-s
+            N: caviar -s 
+            No consistent way to assign attributes!  (Maybe another parse?)
+                  on: on 
+                  Attributes: head=on sem=on
+               P: on 
+               Attributes: head=on sem=on
+                     the: the 
+                     Attributes: head=the sem=the
+                  Det: the 
+                  Attributes: num=sing sem=the head=the
+                  Or:       head=the sem=the_plural num=pl
+                  Or:       num=mass sem=the_mass head=the
+                     spoon: spoon 
+                     Attributes: sem=spoon head=spoon
+                  N: spoon 
+                  Attributes: num=sing sem=spoon head=spoon
+               NP: the spoon 
+               Attributes: num=sing head=spoon sem=the(spoon)
+            PP: on the spoon 
+            Attributes: head=on sem=%x on(the(spoon),x)
+         N: caviar -s on the spoon 
+         No consistent way to assign attributes!  (Maybe another parse?)
+      NP: the caviar -s on the spoon 
+      No consistent way to assign attributes!  (Maybe another parse?)
+               entice: entice 
+               Attributes: sem=entice head=entice
+            V: entice 
+            Attributes: sem=%obj %subj entice(obj,subj) head=entice tense=stem arg=np
+            Or:       arg=none tense=stem head=entice sem=%subj entice(SOMETHING,subj)
+            -0: -0 
+            Attributes: sem=-0 head=-0
+         V: entice -0 
+         Attributes: arg=np num=pl tense=pres head=entice sem=%obj %subj entice(obj,subj)
+         Or:       arg=none tense=pres num=pl head=entice sem=%subj entice(SOMETHING,subj)
+      VP: entice -0 
+      Attributes: tense=pres num=pl sem=%subj entice(SOMETHING,subj) head=entice
+   S: the caviar -s on the spoon entice -0 
+   No consistent way to assign attributes!  (Maybe another parse?)
+   .: . 
+   Attributes: head=. sem=.
+ROOT: the caviar -s on the spoon entice -0 . 
+No consistent way to assign attributes!  (Maybe another parse?)
+---
