@@ -1,0 +1,123 @@
+# Symbols in the grammar are case-sensitive.
+# 
+# This grammar uses a convention that
+#    - terminals are usually lowercase  (president)
+#    - preterminals are capitalized     (Noun)
+#    - other nonterminals are all-caps  (NP)
+# 
+# This convention just makes grammars more readable to humans.  Thus:
+#
+#    - When *you* are writing grammars in questions 3 and 6, you should 
+#      follow this convention unless you have a good reason not to.  
+#
+#    - But your *program* should still work with grammars that don't
+#      follow this convention.  So how can your program reliably tell
+#      the difference between terminal and nonterminal symbols?  If
+#      there is at least one rule for rewriting a symbol, then that
+#      symbol is a nonterminal and should be rewritten.
+#######################
+
+# Rules for creating full sentences.
+
+#changes:
+#1. sentence is made of NP VP and that??
+#2. there are two kind of verb, transitive and intransitive
+#4. add NP	Pron and 1	Pron	Sally, 1	Pron	it
+#5. add 1	NP	that S
+# add 1	NP	NP and NP
+#add 1	Verb	Verb and Verb
+#add 5	Adj	Adv Adj #the very very very perplexed president
+# add 1	IntranVerb	IntranVerb and IntranVerb 
+
+4	ROOT	S .
+2	ROOT	S !
+1	ROOT	is it true that S ?     # mixing terminals and nonterminals is ok.
+
+# The basic grammar rules.  Here's what the abbreviations stand for:
+#    S  = sentence
+#    NP = noun phrase
+#    Verb1 = transitive verb
+#    Verb2 = non-transitive verb
+#    Pron = personal pronoun
+##    VP = verb2 phrase
+#    PP = prepositional phrase
+#    Det = determiner (sometimes called "article")
+#    Prep = preposition
+#    Adj = adjective
+
+3	S	NP VP
+1	S	it VP that S
+1	S	NP thought that S
+1	S	that S VP
+
+1	VP	IntranVerb PP
+1	VP	IntranVerb
+5	VP	tranVerb NP
+
+
+3	NP	Det Noun
+3	NP	Pronoun
+3	NP	ProperNoun
+
+1	NP	NP Conj NP  # Sally and the president
+1	tranVerb	tranVerb Conj tranVerb     #wanted and ate a sandwich
+1	IntranVerb	IntranVerb Conj IntranVerb 
+
+1	Conj	and
+1	Conj	or
+
+
+1	NP	NP PP
+1	PP	Prep NP
+5	Noun	Adj Noun
+
+
+
+
+# Vocabulary.  Your program can see that "ate" is a terminal
+# symbol because there exists no rule for rewriting it.
+# Any symbol that can rewrite as a terminal (or a string of 
+# terminals, like "chief of staff") is called a "preterminal."  Notice 
+# that a preterminal is a special kind of nonterminal.
+
+
+
+2	IntranVerb	sighed
+2	IntranVerb	worked
+2	tranVerb	thought
+2	tranVerb	ate
+2	tranVerb	wanted
+2	tranVerb	kissed
+2	tranVerb	understood
+2	tranVerb	pickled
+2	tranVerb	perplexed
+
+2	Det	the
+1	Det	a
+1	Det	every
+
+1	Noun	president
+1	Noun	sandwich
+1	Noun	pickle
+1	Noun	chief of staff
+1	Noun	floor
+1	Noun	proposal
+1	Noun	desk
+
+1	Adj	fine
+1	Adj	delicious
+1	Adj	perplexed
+1	Adj	pickled
+
+1	Adj	Adv Adj    #the very very very perplexed president
+
+1	Adv	very
+1	Adv	extremely
+
+1	Prep	with
+1	Prep	on
+1	Prep	under
+1	Prep	in
+
+1	ProperNoun	Sally
+1	Pronoun	it
